@@ -1,0 +1,107 @@
+
+body {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    color: #fff;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.container {
+    text-align: center;
+    animation: fadeIn 1.2s ease;
+}
+.glow {
+    font-size: 7rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 20px #00e6ff, 0 0 40px #00e6ff, 0 0 80px #00e6ff;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2em;
+}
+.message {
+    font-size: 2rem;
+    margin-bottom: 1em;
+    color: #b2fefa;
+    text-shadow: 0 0 10px #222;
+}
+.home-link {
+    display: inline-block;
+    padding: 0.75em 2em;
+    background: linear-gradient(90deg, #00e6ff 0%, #b2fefa 100%);
+    color: #232526;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 24px rgba(0,230,255,0.2);
+    transition: background 0.5s, color 0.5s, transform 0.2s;
+}
+.home-link:hover {
+    background: linear-gradient(90deg, #b2fefa 0%, #00e6ff 100%);
+    color: #232526;
+    transform: scale(1.05);
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+.stars {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: twinkle 3s infinite alternate;
+}
+
+#plane {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 120px;
+    height: auto;
+    animation: flyDiagonal 2s linear forwards;
+    filter: drop-shadow(0 0 6px #00e6ff) drop-shadow(0 0 12px #00e6ff);
+    transform-origin: top left;
+    z-index: 1;
+}
+
+@keyframes flyDiagonal {
+    0% {
+        left: 0vw;
+        top: 0vh;
+        transform: rotate(-20deg) scale(0.8);
+    }
+    60% {
+        left: 60vw;
+        top: 60vh;
+        transform: rotate(10deg) scale(1.1);
+    }
+    90% {
+        left: 90vw;
+        top: 90vh;
+        transform: rotate(20deg) scale(1.25);
+    }
+
+    100% {
+        left: 100vw;
+        top: 100vh;
+    }
+}
+@keyframes twinkle {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}

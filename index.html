@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="title">Ryaturmite</h1>
+    <div class="container">        
+        <h1 class="intro">Hello, I'm <span class="highlight">Ryan Salem</span></h1>
+        <p>I have a dream to one day be a <strong>successful hardware engineer</strong>!</p>
+        <p>Some projects I'm currently working on are:</p>
+        <div class="divider"></div>
+
+        <p>Things I'm passionate about:</p>
+        <ul>
+            <li><strong>Circuitry ⚡</strong> – Exploring electronic components.</li>
+            <li><strong>Cyber Security 👨‍💻</strong> – I do CTFs and study ethical hacking.</li>
+            <li><strong>Software Development 💻</strong> – I develop useful apps.</li>
+        </ul>
+
+        <p>Thanks for checking out my page — stay tuned for new projects!</p>
+    </div>
+
+    <script>
+        const currentLocation = window.location.href;
+        const seshID = Math.floor(Math.random() * 100000) + 1;
+
+        function notFound(sessionId) {
+            window.location.href = `/404#${sessionId}`;
+        }
+
+        if (currentLocation == "ryaturmite.github.io/index.html") {
+            notFound(seshID);
+        }
+
+        setInterval(() => {
+            if (window.outerWidth - window.innerWidth > 100) {
+                document.body.innerHTML = "";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

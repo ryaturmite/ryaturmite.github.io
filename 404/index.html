@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404 Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.52.min.css">
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="container">
+        <div class="glow">404</div>
+        <div class="message">Oops! Page Not Found</div>
+        <a class="home-link" href="https://ryaturmite.github.io">Go Home</a>
+    </div>
+    <img id="plane" src="404-plane.png" alt="Image">
+    <script>
+        const stars = document.getElementById('stars');
+        const plane = document.getElementById("plane");
+
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.opacity = 0.5 + Math.random() * 0.5;
+            star.style.animationDelay = (Math.random() * 2) + 's';
+            stars.appendChild(star);
+        }
+
+        setTimeout(() => {
+            plane.remove();
+        }, 2300);
+    </script>
+</body>
+</html>
